@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <declare-styleable name="AddSubView">
+        <!--是否可以手动输入-->
+        <attr name="dview_asv_editable" format="boolean"/>
+        <!-- 左右2边+-按钮的宽度 -->
+        <attr name="dview_asv_imageWidth" format="dimension" />
+        <!-- 中间EditText的宽度 -->
+        <attr name="dview_asv_contentWidth" format="dimension" />
+        <!--中间TextView的大小-->
+        <attr name="dview_asv_contentTextSize" format="dimension" />
+        <!--中间字体的颜色-->
+        <attr name="dview_asv_contentTextColor" format="color" />
+        <!--整个控件的background-->
+        <attr name="dview_asv_background" format="color|reference" />
+        <!--左面控件的背景-->
+        <attr name="dview_asv_leftBackground" format="color|reference" />
+        <!--右面控件的背景-->
+        <attr name="dview_asv_rightBackground" format="color|reference" />
+        <!--中间控件的背景-->
+        <attr name="dview_asv_contentBackground" format="color|reference" />
+        <!--左面控件的资源-->
+        <attr name="dview_asv_leftResources" format="color|reference" />
+        <!--右面控件的资源-->
+        <attr name="dview_asv_rightResources" format="color|reference" />
+    </declare-styleable>
+</resources>
