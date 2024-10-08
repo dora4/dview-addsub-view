@@ -9,7 +9,7 @@
     </item>
     <item android:state_pressed="false">
         <shape>
-            <solid android:color="@color/color_group_view_bg" />
+            <solid android:color="@color/color_icon" />
             android:width="1dp"/>
             <corners android:topRightRadius="5dp" android:bottomRightRadius="5dp" />
         </shape>
