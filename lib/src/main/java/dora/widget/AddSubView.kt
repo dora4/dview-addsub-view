@@ -155,7 +155,7 @@ class AddSubView(
                 if (etInput.isCursorVisible) {
                     etInput.isCursorVisible = false
                 }
-                etInput.setText(inputValue)
+                etInput.setText(inputValue.toString())
             } else if (inventory < max) {
                 // 库存不足
                 warningForInventory()
