@@ -110,9 +110,7 @@ class AddSubView @JvmOverloads constructor(
             val textParams = LayoutParams(contentWidth, LayoutParams.MATCH_PARENT)
             etInput.layoutParams = textParams
         }
-        val maxLength = max.toString().length
-        etInput.keyListener = DigitsKeyListener.getInstance("0123456789")
-        etInput.filters = arrayOf(InputFilter.LengthFilter(maxLength))
+        updateInputFilter()
         etInput.setTextColor(contentTextColor)
         if (contentTextSize > 0) {
             etInput.textSize = contentTextSize.toFloat()
@@ -132,6 +130,14 @@ class AddSubView @JvmOverloads constructor(
         if (rightIcon != null) {
             icPlus.setImageDrawable(rightIcon)
         }
+    }
+
+    private fun updateInputFilter() {
+        // 最大长度
+        val maxLength = max.toString().length
+        // 只允许数字，并限制长度
+        etInput.keyListener = DigitsKeyListener.getInstance("0123456789")
+        etInput.filters = arrayOf(android.text.InputFilter.LengthFilter(maxLength))
     }
 
     private fun setEditable(editable: Boolean) {
@@ -298,6 +304,7 @@ class AddSubView @JvmOverloads constructor(
 
     fun setMax(max: Int): AddSubView {
         this.max = max
+        updateInputFilter()
         return this
     }
 
