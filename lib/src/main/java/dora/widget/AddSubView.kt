@@ -3,6 +3,7 @@ package dora.widget
 import android.content.Context
 import android.content.res.ColorStateList
 import android.text.Editable
+import android.text.InputFilter
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.text.method.DigitsKeyListener
@@ -60,7 +61,7 @@ class AddSubView @JvmOverloads constructor(
         val a = getContext().obtainStyledAttributes(attrs, R.styleable.AddSubView)
         val editable = a.getBoolean(R.styleable.AddSubView_dview_asv_editable, true)
         // 左右两面的宽度
-        val imageWidth = a.getDimensionPixelSize(R.styleable.AddSubView_dview_asv_imageWidth, -1)
+        val iconWidth = a.getDimensionPixelSize(R.styleable.AddSubView_dview_asv_iconWidth, -1)
         // 中间内容框的宽度
         val contentWidth =
             a.getDimensionPixelSize(R.styleable.AddSubView_dview_asv_contentWidth, -1)
@@ -98,10 +99,9 @@ class AddSubView @JvmOverloads constructor(
         etInput.setOnClickListener(this)
         etInput.addTextChangedListener(this)
         setEditable(editable)
-        etInput.setTextColor(contentTextColor)
         // 设置两边按钮的宽度
-        if (imageWidth > 0) {
-            val textParams = LayoutParams(imageWidth, LayoutParams.MATCH_PARENT)
+        if (iconWidth > 0) {
+            val textParams = LayoutParams(iconWidth, LayoutParams.MATCH_PARENT)
             icPlus.layoutParams = textParams
             icMinus.layoutParams = textParams
         }
@@ -110,9 +110,10 @@ class AddSubView @JvmOverloads constructor(
             val textParams = LayoutParams(contentWidth, LayoutParams.MATCH_PARENT)
             etInput.layoutParams = textParams
         }
-        if (contentTextColor > 0) {
-            etInput.textSize = contentTextColor.toFloat()
-        }
+        val maxLength = max.toString().length
+        etInput.keyListener = DigitsKeyListener.getInstance("0123456789")
+        etInput.filters = arrayOf(InputFilter.LengthFilter(maxLength))
+        etInput.setTextColor(contentTextColor)
         if (contentTextSize > 0) {
             etInput.textSize = contentTextSize.toFloat()
         }

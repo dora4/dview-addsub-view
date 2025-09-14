@@ -6,7 +6,7 @@
         <!--是否可以手动输入-->
         <attr name="dview_asv_editable" format="boolean"/>
         <!-- 左右2边+-按钮的宽度 -->
-        <attr name="dview_asv_imageWidth" format="dimension|reference" />
+        <attr name="dview_asv_iconWidth" format="dimension|reference" />
         <!-- 中间EditText的宽度 -->
         <attr name="dview_asv_contentWidth" format="dimension|reference" />
         <!--中间TextView的大小-->
