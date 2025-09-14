@@ -15,10 +15,11 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import dora.widget.addsubview.R
 
-class AddSubView(
+class AddSubView @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet
-) : LinearLayout(context, attrs), View.OnClickListener, TextWatcher {
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : LinearLayout(context, attrs, defStyleAttr), View.OnClickListener, TextWatcher {
 
     /**
      * 最大购买数量，默认为99。
@@ -51,15 +52,11 @@ class AddSubView(
     private var position = 0
     private var onWarnListener: OnWarnListener? = null
     private var onChangeValueListener: OnChangeValueListener? = null
-    private lateinit var etInput: EditText
-    private lateinit var icPlus: ImageView
-    private lateinit var icMinus: ImageView
+    private var etInput: EditText
+    private var icPlus: ImageView
+    private var icMinus: ImageView
 
     init {
-        init(context, attrs)
-    }
-
-    private fun init(context: Context, attrs: AttributeSet) {
         val a = getContext().obtainStyledAttributes(attrs, R.styleable.AddSubView)
         val editable = a.getBoolean(R.styleable.AddSubView_dview_asv_editable, true)
         // 左右两面的宽度
@@ -81,13 +78,18 @@ class AddSubView(
         val rightBackground = a.getDrawable(R.styleable.AddSubView_dview_asv_rightBackground)
         // 中间控件的背景
         val contentBackground = a.getDrawable(R.styleable.AddSubView_dview_asv_contentBackground)
-        // 左面控件的资源
-        val leftResources = a.getDrawable(R.styleable.AddSubView_dview_asv_leftResources)
-        // 右面控件的资源
-        val rightResources = a.getDrawable(R.styleable.AddSubView_dview_asv_rightResources)
+        // 左面控件的icon
+        val leftIcon = a.getDrawable(R.styleable.AddSubView_dview_asv_leftIcon)
+        // 右面控件的icon
+        val rightIcon = a.getDrawable(R.styleable.AddSubView_dview_asv_rightIcon)
+        // 最小值
+        min = a.getInt(R.styleable.AddSubView_dview_asv_min, min)
+        // 最大值
+        max = a.getInt(R.styleable.AddSubView_dview_asv_max, max)
+        // 每次递增递减的值
+        step = a.getInt(R.styleable.AddSubView_dview_asv_step, step)
         // 资源回收
         a.recycle()
-
         // 把布局和当前类形成整体
         LayoutInflater.from(context).inflate(R.layout.layout_add_sub, this)
         icPlus = findViewById<View>(R.id.ic_plus) as ImageView
@@ -99,14 +101,12 @@ class AddSubView(
         etInput.addTextChangedListener(this)
         setEditable(editable)
         etInput.setTextColor(contentTextColor)
-
         // 设置两边按钮的宽度
         if (imageWidth > 0) {
             val textParams = LayoutParams(imageWidth, LayoutParams.MATCH_PARENT)
             icPlus.layoutParams = textParams
             icMinus.layoutParams = textParams
         }
-
         // 设置中间输入框的宽度
         if (contentWidth > 0) {
             val textParams = LayoutParams(contentWidth, LayoutParams.MATCH_PARENT)
@@ -127,11 +127,11 @@ class AddSubView(
         if (rightBackground != null) {
             icPlus.background = rightBackground
         }
-        if (leftResources != null) {
-            icMinus.setImageDrawable(leftResources)
+        if (leftIcon != null) {
+            icMinus.setImageDrawable(leftIcon)
         }
-        if (rightResources != null) {
-            icPlus.setImageDrawable(rightResources)
+        if (rightIcon != null) {
+            icPlus.setImageDrawable(rightIcon)
         }
     }
 

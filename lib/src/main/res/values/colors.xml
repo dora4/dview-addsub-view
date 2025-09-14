@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <color name="color_text_bg">#424243</color>
-
+    <color name="color_text_bg">#D3D3D3</color>
     <color name="color_icon">#999999</color>
 </resources>

@@ -21,9 +21,15 @@
         <attr name="dview_asv_rightBackground" format="color|reference" />
         <!--中间控件的背景-->
         <attr name="dview_asv_contentBackground" format="color|reference" />
-        <!--左面控件的资源-->
-        <attr name="dview_asv_leftResources" format="color|reference" />
-        <!--右面控件的资源-->
-        <attr name="dview_asv_rightResources" format="color|reference" />
+        <!--左面控件的icon-->
+        <attr name="dview_asv_leftIcon" format="color|reference" />
+        <!--右面控件的icon-->
+        <attr name="dview_asv_rightIcon" format="color|reference" />
+        <!-- 最小值 -->
+        <attr name="dview_asv_min" format="integer" />
+        <!-- 最大值 -->
+        <attr name="dview_asv_max" format="integer" />
+        <!-- 每次递增递减的值 -->
+        <attr name="dview_asv_step" format="integer" />
     </declare-styleable>
 </resources>
