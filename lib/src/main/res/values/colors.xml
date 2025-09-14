@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <color name="dview_color_text">#1A2025</color>
-    <color name="dview_color_icon">#D3D3D3</color>
+    <color name="dview_addsub_color_text">#1A2025</color>
+    <color name="dview_addsub_color_icon_normal">#F9F9F9</color>
+    <color name="dview_addsub_color_icon_pressed">#D3D3D3</color>
 </resources>

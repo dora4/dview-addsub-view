@@ -189,7 +189,7 @@ class AddSubView @JvmOverloads constructor(
     private fun warningForMin() {
         icMinus.imageTintList = ColorStateList.valueOf(
             ContextCompat.getColor(
-                context, R.color.dview_color_icon
+                context, R.color.dview_addsub_color_icon_normal
             )
         )
         onWarnListener?.onWarningForMin(min)
@@ -202,7 +202,7 @@ class AddSubView @JvmOverloads constructor(
     private fun warningForMax() {
         icPlus.imageTintList = ColorStateList.valueOf(
             ContextCompat.getColor(
-                context, R.color.dview_color_icon
+                context, R.color.dview_addsub_color_icon_normal
             )
         )
         onWarnListener?.onWarningForMax(max)
@@ -255,13 +255,13 @@ class AddSubView @JvmOverloads constructor(
             icPlus.imageTintList = ColorStateList.valueOf(
                 ContextCompat.getColor(
                     context,
-                    R.color.dview_color_text
+                    R.color.dview_addsub_color_text
                 )
             )
             icMinus.imageTintList = ColorStateList.valueOf(
                 ContextCompat.getColor(
                     context,
-                    R.color.dview_color_text
+                    R.color.dview_addsub_color_text
                 )
             )
         }

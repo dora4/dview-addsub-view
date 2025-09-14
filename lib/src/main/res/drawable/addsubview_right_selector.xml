@@ -2,14 +2,13 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android" android:enterFadeDuration="200" android:exitFadeDuration="200">
     <item android:state_pressed="true">
         <shape>
-
-            <solid android:color="#F9F9F9" />
+            <solid android:color="@color/dview_addsub_color_icon_pressed" />
             <corners android:topRightRadius="5dp" android:bottomRightRadius="5dp" />
         </shape>
     </item>
     <item android:state_pressed="false">
         <shape>
-            <solid android:color="@color/dview_color_icon" />
+            <solid android:color="@color/dview_addsub_color_icon_normal" />
             android:width="1dp"/>
             <corners android:topRightRadius="5dp" android:bottomRightRadius="5dp" />
         </shape>

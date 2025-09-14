@@ -29,7 +29,7 @@
         android:minWidth="40dp"
         android:text="1"
         android:maxLength="2"
-        android:textColor="@color/dview_color_text"
+        android:textColor="@color/dview_addsub_color_text"
         android:textCursorDrawable="@null"
         android:textSize="15sp" />
 
