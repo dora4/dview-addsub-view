@@ -70,8 +70,6 @@ class AddSubView @JvmOverloads constructor(
         // 中间字体的颜色
         val contentTextColor =
             a.getColor(R.styleable.AddSubView_dview_asv_contentTextColor, -0x1000000)
-        // 整个控件的background
-        val background = a.getDrawable(R.styleable.AddSubView_dview_asv_background)
         // 左面控件的背景
         val leftBackground = a.getDrawable(R.styleable.AddSubView_dview_asv_leftBackground)
         // 右面控件的背景
@@ -191,7 +189,7 @@ class AddSubView @JvmOverloads constructor(
     private fun warningForMin() {
         icMinus.imageTintList = ColorStateList.valueOf(
             ContextCompat.getColor(
-                context, R.color.color_icon
+                context, R.color.dview_color_icon
             )
         )
         onWarnListener?.onWarningForMin(min)
@@ -204,7 +202,7 @@ class AddSubView @JvmOverloads constructor(
     private fun warningForMax() {
         icPlus.imageTintList = ColorStateList.valueOf(
             ContextCompat.getColor(
-                context, R.color.color_icon
+                context, R.color.dview_color_icon
             )
         )
         onWarnListener?.onWarningForMax(max)
@@ -257,13 +255,13 @@ class AddSubView @JvmOverloads constructor(
             icPlus.imageTintList = ColorStateList.valueOf(
                 ContextCompat.getColor(
                     context,
-                    R.color.color_text_bg
+                    R.color.dview_color_text
                 )
             )
             icMinus.imageTintList = ColorStateList.valueOf(
                 ContextCompat.getColor(
                     context,
-                    R.color.color_text_bg
+                    R.color.dview_color_text
                 )
             )
         }

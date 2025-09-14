@@ -6,15 +6,13 @@
         <!--是否可以手动输入-->
         <attr name="dview_asv_editable" format="boolean"/>
         <!-- 左右2边+-按钮的宽度 -->
-        <attr name="dview_asv_imageWidth" format="dimension" />
+        <attr name="dview_asv_imageWidth" format="dimension|reference" />
         <!-- 中间EditText的宽度 -->
-        <attr name="dview_asv_contentWidth" format="dimension" />
+        <attr name="dview_asv_contentWidth" format="dimension|reference" />
         <!--中间TextView的大小-->
-        <attr name="dview_asv_contentTextSize" format="dimension" />
+        <attr name="dview_asv_contentTextSize" format="dimension|reference" />
         <!--中间字体的颜色-->
-        <attr name="dview_asv_contentTextColor" format="color" />
-        <!--整个控件的background-->
-        <attr name="dview_asv_background" format="color|reference" />
+        <attr name="dview_asv_contentTextColor" format="color|reference" />
         <!--左面控件的背景-->
         <attr name="dview_asv_leftBackground" format="color|reference" />
         <!--右面控件的背景-->
