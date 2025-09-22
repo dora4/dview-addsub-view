@@ -2,6 +2,9 @@ dview-addsub-view
 ![Release](https://jitpack.io/v/dora4/dview-addsub-view.svg)
 --------------------------------
 
+#### 卡片
+![DORA视图 数量操控器](https://github.com/user-attachments/assets/7fd63dd2-dc55-4ce2-834a-9ea38aa04bca)
+
 #### Gradle依赖配置
 
 ```groovy
